@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+    color: #fff;
+    overflow-y: hidden;
+}
+
+.container{
+    height: 470px;
+    width: 350px;
+    border: 2px solid;
+    border-left-color:#0cf ;
+    border-right-color: #0cf;
+    border-top-color:  #0cf;
+    border-bottom-color:  #0cf;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+
+
+}
+.container .img-section{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#4d3664,#4d3884,#0cf,#4d3664,#4d3884,#0cf,#4d3664);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: .6s ease;
+    overflow: hidden;
+
+}
+.container:hover .img-section{
+    top: 5%;
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #d80aa8,
+                  0 0 20px #4d3664,
+                  0 0 30px #0cf;
+    
+}
+
+img{
+    width: 250px;
+    border-radius: 50%;
+    background: #021a2f;
+}
+.text-content{
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    opacity: 0;
+    transition: .5s;
+}
+.text-content:hover{
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+   
+    transition: .5s;
+    opacity: 10;
+}
+.text-content .text-content{
+    opacity: 1;
+    transition-delay: .5s;
+}
+.text-content span:nth-child(1){
+    letter-spacing: 1px;
+    font-size: 32px;
+}
+.container:hover span:nth-child(1){
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+}
+@keyframes topslide{
+    0%{
+        transform: translateY(200px);
+        opacity: 0;
+        filter: blur(5px);
+    }
+    100%{
+        transform: translateY(00px);
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+}
+
+.text-content span:nth-child(2){
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.container:hover span:nth-child(2){
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+    animation-delay: .2s;
+
+}
+.text-content p{
+    font-size: 13px;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.container:hover p{
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+    animation-delay: .4s;
+}
+
+.btn{
+    height: 35px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #222;
+    color: #0cf;
+    border: 2px solid #0cf;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: .5s;
+}
+.container:hover .btn{
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+    animation-delay: .6s;
+}
+.btn:hover{
+    background: #0cf;
+    color: #222;
+    box-shadow: 0 0 10px #0cf;
+}
+.social{
+    display: flex;
+}
+.social i{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #0cf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #0cf;
+    margin-left: 20px;
+    transition: .4s;
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+    animation-delay: .8s;
+}
+.container:hover .social{
+    animation: topslide 1s ease forwards;
+    opacity: 0;
+    animation-delay: .8s;
+}
+.social i:hover{
+    box-shadow: 0 0 10px #0cf;
+    color: #222;
+    background: #0cf;
+}
+
+.wrapper .dynamic-txt{
+    overflow: hidden;
+    height: 40px;
+    text-shadow:  #d80aa8;
+    
+    
+ }
+.dynamic-txt li{
+    list-style: none;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    
+    color: #0cf;
+    text-shadow: #d80aa8;
+
+    
+    animation: slide 4.5s steps(3) infinite;
+}
+
+
+@keyframes slide {
+    100%{
+        top: -130px;
+    }
+}
+.dynamic-txt li span{
+    position: relative;
+
+}
+.dynamic-txt li span::after{
+    content: "";
+    position: absolute;
+    
+    height: 100%;
+    width: 100%;
+    background: #222;
+   
+    animation: typing 2.5s steps(9) infinite;
+}
+@keyframes typing {
+    100%{
+        left: 100%;margin: 0 -35px 0 35px;
+    }
+}
